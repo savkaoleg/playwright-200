@@ -8,7 +8,7 @@ const sleep = (ms) => {
   return new Promise(resolve => setTimeout(resolve, ms));
 };
 
-const sleepTimeout = 2*60*1000 / 5; // 2 min to 5 calls
+const sleepTimeout = 2*60*1000 / 3; // 2 min to 3 calls
 
 describe('Login', () => {
   beforeEach(async ({ page }) => {
@@ -28,10 +28,7 @@ describe('Login', () => {
 
     // console.log('clicando entrar');
     await page.click(getDataTestIdSelector('entrar'));
-    await sleep(sleepTimeout);
   
-    // console.log('esperando \'logout\'');
-    await page.waitForSelector(getDataTestIdSelector('logout'));
-    await sleep(sleepTimeout);
+    // console.log('esperando');
   })
 })
